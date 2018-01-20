@@ -71,7 +71,7 @@ function joinWord() {
 wordSetup();
 
 document.onkeyup = function(event) {
-	userGuess = event.key
+	userGuess = event.key.toLowerCase();
 	console.log(userGuess);
 
 	if (alphabet.indexOf(userGuess) !== -1 && guessesSoFar.indexOf(userGuess) === -1) {
@@ -126,13 +126,13 @@ document.onkeyup = function(event) {
 				
 	
 		winAdd();
-		document.getElementById("currentWord").textContent = ("...");
 
 		refresh();
 		wordSetup();
 
 	}
-
+	
+	//pictures
 	if (guessesLeft === 8) {
 		var image = document.getElementById("currentImage");
 		image.src = "assets/images/hangman-1.png";

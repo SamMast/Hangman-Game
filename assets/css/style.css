@@ -4,6 +4,7 @@
 	text-align: center;
 	color: #4B90CD;
 	margin-bottom: 20px;
+	font-family: 'Cabin Sketch', cursive;
 }
 
 .center {
@@ -19,7 +20,8 @@
 	float: left;
 	border-style: solid;
 	border-width: 1px;
-	border-color: #ccc;
+	border-color: #FDB827;
+	font-family: 'Cabin Sketch', cursive;
 }
 
 .playSide {
@@ -28,7 +30,7 @@
 	float: left;
 	border-style: solid;
 	border-width: 1px;
-	border-color: #ccc;
+	border-color: #FDB827;
 	background-color: white;
 }
 
@@ -36,7 +38,7 @@
 	height: 25%;
 	border-style: solid;
 	border-width: 1px;
-	border-color: #ccc;
+	border-color: #FDB827;
 	font-size: 25px;
 }
 
