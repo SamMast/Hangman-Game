@@ -2,10 +2,12 @@
 	width: 100%;
 	margin: 0;
 	text-align: center;
+	color: #4B90CD;
+	margin-bottom: 20px;
 }
 
 .center {
-	width: 75%;
+	width: 95%;
 	height: 100%;
 	margin: auto;
 	text-align: center;
@@ -27,11 +29,33 @@
 	border-style: solid;
 	border-width: 1px;
 	border-color: #ccc;
+	background-color: white;
 }
 
 .item {
-	height: 33%;
+	height: 25%;
 	border-style: solid;
 	border-width: 1px;
 	border-color: #ccc;
+	font-size: 25px;
+}
+
+.image {
+	width: 95%;
+	height: 95%;
+}
+
+.logo {
+	max-width: 100%;
+	margin: auto;
+	max-height: 50%;
+}
+
+.instructions {
+	padding-bottom: 20px;
+}
+
+body {
+	background-color: #002D62;
+	color: #FDB827;
 }
