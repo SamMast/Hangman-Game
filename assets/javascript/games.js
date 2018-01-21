@@ -89,13 +89,21 @@ document.onkeyup = function(event) {
 				var image = document.getElementById("currentImage");
 				image.src = "assets/images/hangman-final-loss.png";
 
-				alert("Game Over, the word was '" + currentWord + "'");
+				alert("Errrrrrrr.....Game Over, the word was '" + currentWord + "'");
 
 				winReset();
 				refresh();
 				wordSetup();
 
 			}
+
+			if (guessesLeft <= 3) {
+		    	document.getElementById("guessesLeft").style.color = "red";
+		    	document.getElementById("guessesLeft").style.fontSize = "200%";
+	        } else {
+	        	document.getElementById("guessesLeft").style.color = "#FDB827";
+	        	document.getElementById("guessesLeft").style.fontSize = "100%";
+	        }
 
 
 		} else if (currentWordArray.indexOf(userGuess) !== -1) {
