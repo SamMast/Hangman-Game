@@ -1,5 +1,6 @@
 //Global Variables
 var winCount = 0;
+var lossCount = 0;
 
 var currentWord = "";
 var currentWordArray = [];
@@ -12,7 +13,7 @@ var guessesSoFar = [];
 
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 	//list of choices for the word to guess (replace with real words when ready)
-var wordOptions = ["dunk", "slam", "pass", "cut", "shoot", "crossover", "dribble", "foul", "layup", "jordan",  "nuggets", "bulls", "lakers", "celtics", "timberwolves", "kobe", "lebron", "warriors", "clippers", "alleyoop", "fadeaway", "mvp", "champion", "ring", "nike", "adidas",  ];
+var wordOptions = ["airball", "assist", "rebound", "block", "backboard", "charge", "flop", "screen", "swish", "turnover", "travel", "dunk", "slam", "pass", "cut", "score", "shoot", "crossover", "dribble", "foul", "layup", "jordan",  "nuggets", "bulls", "lakers", "celtics", "timberwolves", "kobe", "lebron", "warriors", "clippers", "alleyoop", "fadeaway", "mvp", "champion", "rings", "nike", "adidas", "hoop" ];
 
 
 
@@ -24,9 +25,16 @@ function winAdd(x) {
 	document.getElementById("winCount").textContent = winCount;
 }
 
-function winReset() {
+function lossAdd(x) {
+	lossCount++;
+	document.getElementById("lossCount").textContent = lossCount;
+}
+
+function winLossReset() {
 	winCount = 0;
 	document.getElementById("winCount").textContent = winCount;
+	lossCount = 0;
+	document.getElementById("lossCount").textContent = lossCount;
 }
 
 function guessMinus(x) {
@@ -57,8 +65,8 @@ function refresh() {
 	currentDisplay = [];
 	document.getElementById("currentWord").textContent = currentDisplay;
 
-	var image = document.getElementById("currentImage");
-	image.src = "assets/images/hangman-start.png";	
+	// var image = document.getElementById("currentImage");
+	// image.src = "assets/images/hangman-start.png";	
 
 }
 
@@ -89,9 +97,10 @@ document.onkeyup = function(event) {
 				var image = document.getElementById("currentImage");
 				image.src = "assets/images/hangman-final-loss.png";
 
-				alert("Errrrrrrr.....Game Over, the word was '" + currentWord + "'");
+				document.getElementById("instructions").textContent = ("MISS! The word was '" + currentWord + "'. Guess the next word:");
+				document.getElementById("instructions").style.color = "red";
 
-				winReset();
+				lossAdd();
 				refresh();
 				wordSetup();
 
@@ -130,7 +139,8 @@ document.onkeyup = function(event) {
 		var image = document.getElementById("currentImage");
 		image.src = "assets/images/hangman-final-win.png";
 
-		alert("You win, the word was " + currentWord);
+		document.getElementById("instructions").textContent = ("You win, the word was " + currentWord + ".  Guess the next word:");
+		document.getElementById("instructions").style.color = "green";
 				
 	
 		winAdd();
@@ -165,6 +175,20 @@ document.onkeyup = function(event) {
 	} else if (guessesLeft === 1) {
 		var image = document.getElementById("currentImage");
 		image.src = "assets/images/hangman-8.png";
+	}
+
+	if (lossCount === 5) {
+		alert("Errrrrrrr......Game Over.  You had " + winCount + " wins.")
+		
+		refresh();
+		wordSetup();
+		winLossReset();
+
+		document.getElementById("instructions").textContent = ("New Game. Guess the word:");
+		document.getElementById("instructions").style.color = "black";
+
+		var image = document.getElementById("currentImage");
+		image.src = "assets/images/hangman-start.png";	
 	}
 }
 

@@ -19,23 +19,33 @@
 			</header>
 			<div>
 				<p class="bg-info instructions">
-					SlamDunk Hangman.  Guess the basketball term by pressing any letter.  But dont lose and get dunked on!
+					SlamDunk Hangman.  Guess the basketball term by pressing any letter.  Dont lose and get dunked on!
 				</p>
 			</div>
 		</div>
 		<div class="panel panel-default center">
 			<div class="panel-heading">
-				<p class="panel-title">
+				<p class="panel-title" id="instructions">
 					Guess any letter to start!
 				</p>
 			</div>
 			<div class="panel-body textSide">
 				<div class="panel-body item">
-					Wins:
-					<br>
-					<span id="winCount">
-						0
-					</span>
+					<div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
+						Wins:
+						<br>
+						<span id="winCount">
+							0
+						</span>
+					</div>
+					<div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
+						Losses:
+						<br>
+						<span id="lossCount">
+							0
+						</span>
+
+					</div>
 				</div>
 				<div class="panel-body item">
 					Current Word:
@@ -65,7 +75,7 @@
 			</div>
 		</div>
 		<div>
-			<footer class="col-md-12 col-lg-12 col-sm-12 col-xs-12 text-center navbar-fixed-bottom footer">Copyright @ 2018 - Samuel Mast</footer>
+			<footer class="col-md-12 col-lg-12 col-sm-12 col-xs-12 text-center navbar-bottom footer">Copyright @ 2018 - Samuel Mast</footer>
 		</div>
 		<script src="assets/javascript/games.js"></script>
 	</body>
