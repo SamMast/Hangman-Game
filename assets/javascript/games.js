@@ -12,7 +12,7 @@ var guessesLeft = 9;
 var guessesSoFar = [];
 
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-	//list of choices for the word to guess (replace with real words when ready)
+	//list of choices for the word to guess
 var wordOptions = ["airball", "assist", "rebound", "block", "backboard", "charge", "flop", "screen", "swish", "turnover", "travel", "dunk", "slam", "pass", "cut", "score", "shoot", "crossover", "dribble", "foul", "layup", "jordan",  "nuggets", "bulls", "lakers", "celtics", "timberwolves", "kobe", "lebron", "warriors", "clippers", "alleyoop", "fadeaway", "mvp", "champion", "rings", "nike", "adidas", "hoop" ];
 
 
@@ -65,8 +65,6 @@ function refresh() {
 	currentDisplay = [];
 	document.getElementById("currentWord").textContent = currentDisplay;
 
-	// var image = document.getElementById("currentImage");
-	// image.src = "assets/images/hangman-start.png";	
 
 }
 
@@ -74,7 +72,7 @@ function joinWord() {
 	currentDisplayWord = currentDisplay.join("");
 }
 
-//Click/Guess Function
+//Click/guess
 
 wordSetup();
 
